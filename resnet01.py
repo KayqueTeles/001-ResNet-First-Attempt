@@ -53,21 +53,21 @@ warnings.filterwarnings("ignore")
 
 print("\n ** Verifying data...")
 
-#if os.path.exists('./lensdata.zip'):
-#     print("\n ** Dataset lensdata.zip already downloaded.")
-#     if os.path.exists('lensdata.tar.gz'):
-#           print("\n ** lensdata.tar.gz already extracted from lensdata.tar.gz.")
-#     else:
-#           with zipfile.ZipFile("lensdata.zip", 'r') as zip_ref:
-#                zip_ref.extractall()
-#           print("\n ** Extracted successfully.")
-#else:
-#     print("\n ** Downloading lensdata.zip...")
-#     wget.download('https://clearskiesrbest.files.wordpress.com/2019/02/lensdata.zip')
-#     print("\n ** Download successful. Extracting...")
-#     with zipfile.ZipFile("lensdata.zip", 'r') as zip_ref:
-#          zip_ref.extractall() 
-#     print("\n ** Extracted successfully.")
+if os.path.exists('./lensdata.zip'):
+     print("\n ** Dataset lensdata.zip already downloaded.")
+     if os.path.exists('lensdata.tar.gz'):
+           print("\n ** lensdata.tar.gz already extracted from lensdata.tar.gz.")
+     else:
+           with zipfile.ZipFile("lensdata.zip", 'r') as zip_ref:
+                zip_ref.extractall()
+           print("\n ** Extracted successfully.")
+else:
+     print("\n ** Downloading lensdata.zip...")
+     wget.download('https://clearskiesrbest.files.wordpress.com/2019/02/lensdata.zip')
+     print("\n ** Download successful. Extracting...")
+     with zipfile.ZipFile("lensdata.zip", 'r') as zip_ref:
+          zip_ref.extractall() 
+     print("\n ** Extracted successfully.")
 
 if os.path.exists('./lensdata/DataVisualization.tar.gz'):
      print("\n ** Files from lensdata.tar.gz were already extracted.")
